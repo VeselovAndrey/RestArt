@@ -4,8 +4,9 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace RestArt.UnitTests
+namespace RestArt.Tests
 {
+    using System;
     using System.Collections.Generic;
     using System.Net;
     using System.Threading.Tasks;
@@ -37,13 +38,13 @@ namespace RestArt.UnitTests
                 ["Content-Language"] = "en-US"
             };
 
-            var command = new RestRequest(HttpVerb.Get, "RestArt", headers, parameters);
+            var request = new RestRequest(HttpVerb.Get, "RestArt", headers, parameters);
 
-            var client = new RestArtClient(this._restUrl);
+            IRestArtClient client = new RestArtClient(this._restUrl);
             client.AddOrUpdatePersistentHeader("PersistentHeader", "ph-value");
 
             // Act
-            RestResponse<TestResponse> response = await client.ExecuteAsync<TestResponse>(command);
+            RestResponse<TestResponse> response = await client.ExecuteAsync<TestResponse>(request);
 
             // Assert
             Assert.NotNull(response);
@@ -74,13 +75,13 @@ namespace RestArt.UnitTests
                 ["Content-Language"] = "en-US"
             };
 
-            var command = new RestRequest(HttpVerb.Post, "RestArt", headers, parameters);
+            var request = new RestRequest(HttpVerb.Post, "RestArt", headers, parameters);
 
-            var client = new RestArtClient(this._restUrl);
+            IRestArtClient client = new RestArtClient(this._restUrl);
             client.AddOrUpdatePersistentHeader("PersistentHeader", "ph-value");
 
             // Act
-            RestResponse<TestResponse> response = await client.ExecuteAsync<TestResponse>(command);
+            RestResponse<TestResponse> response = await client.ExecuteAsync<TestResponse>(request);
 
             // Assert
             Assert.NotNull(response);
@@ -111,13 +112,13 @@ namespace RestArt.UnitTests
                 ["Content-Language"] = "en-US"
             };
 
-            var command = new RestRequest(HttpVerb.Put, "RestArt", headers, parameters);
+            var request = new RestRequest(HttpVerb.Put, "RestArt", headers, parameters);
 
-            var client = new RestArtClient(this._restUrl);
+            IRestArtClient client = new RestArtClient(this._restUrl);
             client.AddOrUpdatePersistentHeader("PersistentHeader", "ph-value");
 
             // Act
-            RestResponse<TestResponse> response = await client.ExecuteAsync<TestResponse>(command);
+            RestResponse<TestResponse> response = await client.ExecuteAsync<TestResponse>(request);
 
             // Assert
             Assert.NotNull(response);
@@ -148,13 +149,13 @@ namespace RestArt.UnitTests
                 ["Content-Language"] = "en-US"
             };
 
-            var command = new RestRequest(HttpVerb.Delete, "RestArt", headers, parameters);
+            var request = new RestRequest(HttpVerb.Delete, "RestArt", headers, parameters);
 
-            var client = new RestArtClient(this._restUrl);
+            IRestArtClient client = new RestArtClient(this._restUrl);
             client.AddOrUpdatePersistentHeader("PersistentHeader", "ph-value");
 
             // Act
-            RestResponse<TestResponse> response = await client.ExecuteAsync<TestResponse>(command);
+            RestResponse<TestResponse> response = await client.ExecuteAsync<TestResponse>(request);
 
             // Assert
             Assert.NotNull(response);

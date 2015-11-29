@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace RestArt.UnitTests
+namespace RestArt.Tests
 {
     using System.Collections.Generic;
     using System.IO;
@@ -40,13 +40,13 @@ namespace RestArt.UnitTests
 
             var content = new MemoryStream(new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 });
 
-            var command = new PostContentRestRequest("RestArt", content, headers, parameters);
+            var request = new PostContentRestRequest("RestArt", content, headers, parameters);
 
-            var client = new RestArtClient(this._restUrl);
+            IRestArtClient client = new RestArtClient(this._restUrl);
             client.AddOrUpdatePersistentHeader("PersistentHeader", "ph-value");
 
             // Act
-            RestResponse<TestResponse> response = await client.ExecuteAsync<TestResponse>(command);
+            RestResponse<TestResponse> response = await client.ExecuteAsync<TestResponse>(request);
 
             // Assert
             Assert.NotNull(response);

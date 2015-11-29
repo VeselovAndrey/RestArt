@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace RestArt.UnitTests
+namespace RestArt.Tests
 {
     using System.Net;
     using System.Threading.Tasks;
@@ -29,13 +29,13 @@ namespace RestArt.UnitTests
                 Delta = 56.78f
             };
             
-            var command = new PostJsonRequest("RestArt", jsonObject, null, null);
+            var request = new PostJsonRequest("RestArt", jsonObject, null, null);
 
-            var client = new RestArtClient(this._restUrl);
+            IRestArtClient client = new RestArtClient(this._restUrl);
             client.AddOrUpdatePersistentHeader("PersistentHeader", "ph-value");
 
             // Act
-            RestResponse<TestResponse> response = await client.ExecuteAsync<TestResponse>(command);
+            RestResponse<TestResponse> response = await client.ExecuteAsync<TestResponse>(request);
 
             // Assert
             Assert.NotNull(response);
