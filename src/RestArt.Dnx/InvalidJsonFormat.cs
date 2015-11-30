@@ -8,5 +8,11 @@ namespace RestArt
 {
     public class InvalidJsonFormat
     {
+        public string ErrorMessage { get; }
+
+        public InvalidJsonFormat(string errorMessage)
+        {
+            this.ErrorMessage = errorMessage;
+        }
     }
 }

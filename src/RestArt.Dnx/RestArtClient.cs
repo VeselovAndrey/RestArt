@@ -21,13 +21,14 @@ namespace RestArt
     public class RestArtClient : IRestArtClient
     {
         private static readonly IEnumerable<IMessageBuilder> _pipeline;
+        private static JsonSerializerSettings _jsonDeserializationSettings;
 
         private readonly Uri _baseUri;
         private readonly ConcurrentDictionary<string, string> _headers = new ConcurrentDictionary<string, string>();
 
         private readonly Type _exceptionType = typeof(RestArtException<>);
         private Type _commonErrorType;
-
+        
         static RestArtClient()
         {
             // Get all message builders
@@ -40,6 +41,10 @@ namespace RestArt
                 })
                 .Select(t => Activator.CreateInstance(t) as IMessageBuilder)
                 .ToArray();
+
+            RestArtClient._jsonDeserializationSettings = new JsonSerializerSettings() {
+                MissingMemberHandling = MissingMemberHandling.Error
+            };
         }
 
         public RestArtClient(string baseUrl)
@@ -124,18 +129,21 @@ namespace RestArt
         private object DeserializeObject<TResponse>(Type resultType, RestResponse<TResponse> restResponse)
             where TResponse : class
         {
-            object errorDescription;
+            object result;
             try {
-                errorDescription = JsonConvert.DeserializeObject(restResponse.Raw, resultType);
+                result = JsonConvert.DeserializeObject(restResponse.Raw, resultType, RestArtClient._jsonDeserializationSettings);
 
-                if (errorDescription == null)
-                    throw new RestArtException<InvalidJsonFormat>(restResponse.StatusCode, new InvalidJsonFormat(), restResponse.Raw);
+                if (result == null)
+                    throw new RestArtException<InvalidJsonFormat>(restResponse.StatusCode, new InvalidJsonFormat("De-serialized object is null"), restResponse.Raw);
             }
             catch (JsonReaderException) {
                 throw new RestArtException<InvalidRestResponse>(restResponse.StatusCode, new InvalidRestResponse(), restResponse.Raw);
             }
+            catch (JsonSerializationException ex) {
+                throw new RestArtException<InvalidJsonFormat>(restResponse.StatusCode, new InvalidJsonFormat(ex.Message), restResponse.Raw);
+            }
 
-            return errorDescription;
+            return result;
         }
 
         private Exception BuildExceptionInstance(Type errorDescriptionType, HttpStatusCode statusCode, object errorDescription, string rawResponse)
