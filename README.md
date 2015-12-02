@@ -13,16 +13,15 @@ RestArt is the .NET library that allows easily send REST API commands and get re
 [![NuGet - RestArt](https://img.shields.io/nuget/vpre/RestArt.svg?label=NuGet:%20RestArt&style=flat-square)](https://www.nuget.org/packages/RestArt/)
 [![MyGet - RestArt](https://img.shields.io/myget/restart/vpre/RestArt.svg?label=MyGet:%20RestArt&style=flat-square)](https://www.myget.org/feed/restart/package/nuget/RestArt)
 
-### Simple example ###
+## Simple example ##
 This is very basic example of RestArt usage.
 
 ```C#
 // Define data transfer class (that will contain REST API response data).
-// This class contains same properties as response json.
+// This class should contains same properties as response JSON.
 public class MyRestApiCommandResponse 
 {
     public int Id { get; set; }
-    public int Order { get; set; }
     public string Content { get; set; }
 }
 
@@ -32,25 +31,23 @@ public class MyRestApiCommandResponse
 public async Task<ApiCommandResponse> GetApiDataAsync () 
 {
     // Create client.
-    IRestArtClient client = new RestArtClient("http://somesite.com/apiEntryPoint/v1");
+    IRestArtClient client = new RestArtClient("http://www.someserver.com/api/v1");
 
     // Create request. Headers and parameters are optional and can be null.
     var headers = new Dictionary<string, string>() {
-        ["ApiKey"] = "S0meApiK3y",
         ["Content-Language"] = "en-US"
     };
 
     var parameters = new Dictionary<string, object>() {
-        ["stringParam"] = "Some string",
-        ["boolParam"] = true,
-        ["intParam"] = 42,
-        ["floatParam"] = 77.7f
+        ["searchQuery"] = "Some string",
+        ["maxItems"] = 42
     };
 
     // This will be GET request to the "GetItems" command.
     var request = new RestRequest(HttpVerb.Get, "GetItems", headers, parameters);
 
-    // Execute request. Response will be converted to MyRestApiCommandResponse class instance in the case of success.
+    // Execute request. 
+    // Response will be converted to MyRestApiCommandResponse class instance in the case of success.
     RestResponse<MyRestApiCommandResponse> response = await client.ExecuteAsync<MyRestApiCommandResponse>(request);
 
     return response.Value;

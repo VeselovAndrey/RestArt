@@ -1,6 +1,8 @@
 ﻿// -----------------------------------------------------------------------
 // <copyright file="PostContentRequestTests.cs">
 // Copyright (c) 2015 Andrey Veselov. All rights reserved.
+// License: Apache License 2.0
+// Contacts: http://andrey.moveax.com andrey@moveax.com
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -11,7 +13,7 @@ namespace RestArt.Tests
     using System.Net;
     using System.Threading.Tasks;
     using RestArt.Requests;
-    using RestArt.UnitTests.Models;
+    using RestArt.Tests.Models;
     using Xunit;
 
     public class PostContentRequestTests

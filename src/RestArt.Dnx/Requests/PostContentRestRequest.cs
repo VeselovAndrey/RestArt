@@ -1,9 +1,11 @@
 ﻿// -----------------------------------------------------------------------
 // <copyright file="PostContentRestRequest.cs">
 // Copyright (c) 2015 Andrey Veselov. All rights reserved.
+// License: Apache License 2.0
+// Contacts: http://andrey.moveax.com andrey@moveax.com
 // </copyright>
 // -----------------------------------------------------------------------
- 
+
 namespace RestArt.Requests
 {
     using System.Collections.Generic;

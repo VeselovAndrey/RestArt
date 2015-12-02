@@ -1,14 +1,14 @@
 ﻿// -----------------------------------------------------------------------
 // <copyright file="PostContentMessageBuilder.cs">
 // Copyright (c) 2015 Andrey Veselov. All rights reserved.
+// License: Apache License 2.0
+// Contacts: http://andrey.moveax.com andrey@moveax.com
 // </copyright>
 // -----------------------------------------------------------------------
 
 namespace RestArt.MessageBuilders
 {
     using System;
-    using System.IO;
-    using System.Net;
     using System.Net.Http;
     using System.Text;
     using Newtonsoft.Json;
