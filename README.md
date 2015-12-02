@@ -53,10 +53,10 @@ public async Task<ApiCommandResponse> GetApiDataAsync ()
     return response.Value;
 }
 ```
-_ExecuteAsync()_ method will return _RestResponse&lt;T&gt;_ object that contains:
+_ExecuteAsync()_ method will return _RestResponse&lt;TResponse&gt;_ object that contains:
 
-* _StatusCode_ - Response HTTP status codes
-* _Value_ - Object with response data
-* _Raw_ - Raw (string) server response
+* _StatusCode_ - The response HTTP status codes;
+* _Value_ - The object with response data;
+* _Raw_ - The raw response.
 
-More details on usage, error handling and documentations will be available soon in project Wiki.
+More details are available in the [project Wiki](https://github.com/VeselovAndrey/RestArt/wiki).
