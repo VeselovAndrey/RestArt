@@ -35,8 +35,14 @@ namespace RestArt.Requests
         {
             this.Verb = verb;
             this.Command = command;
-            this.Headers = RestRequest._objectConvertor.ToStringDictionary(headers);
-            this.Parameters = RestRequest._objectConvertor.ToObjectDictionary(parameters);
+
+            this.Headers = headers.GetType() == typeof(IDictionary<string, string>) ?
+                (IDictionary<string, string>)headers :
+                RestRequest._objectConvertor.ToStringDictionary(headers);
+
+            this.Parameters = parameters.GetType() == typeof(IDictionary<string, object>) ?
+                (IDictionary<string, object>)parameters : 
+                RestRequest._objectConvertor.ToObjectDictionary(parameters);
         }
     }
 }
