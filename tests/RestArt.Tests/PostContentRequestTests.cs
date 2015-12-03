@@ -31,7 +31,7 @@ namespace RestArt.Tests
                 ["stringParam"] = "Some String",
                 ["boolParam"] = true,
                 ["intParam"] = 42,
-                ["FlotParam"] = 77.7f
+                ["FloatParam"] = 77.7f
             };
 
             var headers = new Dictionary<string, string>() {

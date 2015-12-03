@@ -133,7 +133,7 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "RestArt.Dnx/0.5.2-beta-23516": {
+      "RestArt.Dnx/0.5.2.1-beta-23516": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
@@ -428,7 +428,7 @@
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         }
       },
-      "RestArt.Dnx/0.5.2-beta-23516": {
+      "RestArt.Dnx/0.5.2.1-beta-23516": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
@@ -1288,7 +1288,7 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "RestArt.Dnx/0.5.2-beta-23516": {
+      "RestArt.Dnx/0.5.2.1-beta-23516": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
@@ -1555,7 +1555,7 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
-      "RestArt.Dnx/0.5.2-beta-23516": {
+      "RestArt.Dnx/0.5.2.1-beta-23516": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
@@ -1887,7 +1887,7 @@
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         }
       },
-      "RestArt.Dnx/0.5.2-beta-23516": {
+      "RestArt.Dnx/0.5.2.1-beta-23516": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
@@ -3220,7 +3220,7 @@
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         }
       },
-      "RestArt.Dnx/0.5.2-beta-23516": {
+      "RestArt.Dnx/0.5.2.1-beta-23516": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
@@ -4359,7 +4359,7 @@
     }
   },
   "libraries": {
-    "RestArt.Dnx/0.5.2-beta-23516": {
+    "RestArt.Dnx/0.5.2.1-beta-23516": {
       "type": "project",
       "path": "../../src/RestArt.Dnx/project.json"
     },

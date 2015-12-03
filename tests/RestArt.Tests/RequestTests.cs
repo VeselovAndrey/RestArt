@@ -30,7 +30,7 @@ namespace RestArt.Tests
                 ["stringParam"] = "Some String",
                 ["boolParam"] = true,
                 ["intParam"] = 42,
-                ["FlotParam"] = 77.7f
+                ["FloatParam"] = 77.7f
             };
 
             var headers = new Dictionary<string, string>() {
@@ -67,13 +67,50 @@ namespace RestArt.Tests
                 ["stringParam"] = "Some String",
                 ["boolParam"] = true,
                 ["intParam"] = 42,
-                ["FlotParam"] = 77.7f
+                ["FloatParam"] = 77.7f
             };
 
             var headers = new Dictionary<string, string>() {
                 ["header1"] = "Test-One",
                 ["header2"] = "Test-Two",
                 ["Content-Language"] = "en-US"
+            };
+
+            var request = new RestRequest(HttpVerb.Post, "RestArt", headers, parameters);
+
+            IRestArtClient client = new RestArtClient(this._restUrl);
+            client.AddOrUpdatePersistentHeader("PersistentHeader", "ph-value");
+
+            // Act
+            RestResponse<TestResponse> response = await client.ExecuteAsync<TestResponse>(request);
+
+            // Assert
+            Assert.NotNull(response);
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+            Assert.NotNull(response.Raw);
+            Assert.NotNull(response.Value);
+            Assert.Equal(expectedResponseCode, response.Value.Code);
+            Assert.Equal(expectedResponseMessage, response.Value.Msg);
+        }
+
+
+        [Fact]
+        public async Task ExecutePostWithObjectsAsync()
+        {
+            // Arrange
+            const string expectedResponseMessage = "Item created";
+            const int expectedResponseCode = 200;
+
+            var parameters = new {
+                StringParam = "Some String",
+                BoolParam = true,
+                IntParam = 42,
+                FloatParam = 77.7f
+            };
+
+            var headers = new {
+                Header1 = "Test-One",
+                Header2 = "Test-Two"
             };
 
             var request = new RestRequest(HttpVerb.Post, "RestArt", headers, parameters);
@@ -104,7 +141,7 @@ namespace RestArt.Tests
                 ["stringParam"] = "Some String",
                 ["boolParam"] = true,
                 ["intParam"] = 42,
-                ["FlotParam"] = 77.7f
+                ["FloatParam"] = 77.7f
             };
 
             var headers = new Dictionary<string, string>() {
@@ -141,7 +178,7 @@ namespace RestArt.Tests
                 ["stringParam"] = "Some String",
                 ["boolParam"] = true,
                 ["intParam"] = 42,
-                ["FlotParam"] = 77.7f
+                ["FloatParam"] = 77.7f
             };
 
             var headers = new Dictionary<string, string>() {
