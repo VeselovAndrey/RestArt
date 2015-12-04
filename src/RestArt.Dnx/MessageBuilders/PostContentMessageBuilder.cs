@@ -30,11 +30,13 @@ namespace RestArt.MessageBuilders
             bool fistParam = true;
             var cmdBuilder = new StringBuilder(request.Command);
 
-            foreach (var param in request.Parameters) {
-                var divider = fistParam ? "?" : "&";
+            if (request.Parameters != null) {
+                foreach (var param in request.Parameters) {
+                    var divider = fistParam ? "?" : "&";
 
-                cmdBuilder.Append($"{divider}{param.Key}={param.Value.ToString()}");
-                fistParam = false;
+                    cmdBuilder.Append($"{divider}{param.Key}={param.Value.ToString()}");
+                    fistParam = false;
+                }
             }
 
             // Create POST request
