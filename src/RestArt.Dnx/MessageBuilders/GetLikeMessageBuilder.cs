@@ -17,7 +17,8 @@ namespace RestArt.MessageBuilders
     {
         protected override bool IsCanProcessRequest(IRestRequest request)
         {
-            return (request.Verb == HttpVerb.Get || request.Verb == HttpVerb.Delete) && request.GetType() == typeof(RestRequest);
+            return (request.Verb == HttpVerb.Get || request.Verb == HttpVerb.Delete) 
+                && request.GetType() == typeof(RestRequest);
         }
 
         protected override HttpRequestMessage BuildMessage(IRestRequest request)

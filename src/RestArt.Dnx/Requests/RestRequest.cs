@@ -8,12 +8,16 @@
 
 namespace RestArt.Requests
 {
+    using System;
     using System.Collections.Generic;
+    using System.Reflection;
     using RestArt.Convertors;
 
     public class RestRequest : IRestRequest
     {
         private static readonly ObjectConvertor _objectConvertor = new ObjectConvertor();
+        private static readonly TypeInfo _headersDictionaryTypeInfo = typeof (IDictionary<string, string>).GetTypeInfo();
+        private static readonly TypeInfo _parametersDictionaryTypeInfo = typeof(IDictionary<string, object>).GetTypeInfo();
 
         public HttpVerb Verb { get; }
 
@@ -36,11 +40,11 @@ namespace RestArt.Requests
             this.Verb = verb;
             this.Command = command;
 
-            this.Headers = headers.GetType() == typeof(IDictionary<string, string>) ?
+            this.Headers = RestRequest._headersDictionaryTypeInfo.IsAssignableFrom(headers.GetType().GetTypeInfo()) ?
                 (IDictionary<string, string>)headers :
                 RestRequest._objectConvertor.ToStringDictionary(headers);
 
-            this.Parameters = parameters.GetType() == typeof(IDictionary<string, object>) ?
+            this.Parameters = RestRequest._parametersDictionaryTypeInfo.IsAssignableFrom(parameters.GetType().GetTypeInfo()) ?
                 (IDictionary<string, object>)parameters : 
                 RestRequest._objectConvertor.ToObjectDictionary(parameters);
         }

@@ -18,6 +18,7 @@ namespace RestArt.MessageBuilders
         {
             return (request.Verb == HttpVerb.Post || request.Verb == HttpVerb.Put)
                 && request.GetType() == typeof(RestRequest)
+                && request.Parameters != null
                 && request.Parameters.Any(p => p.Value is FileParameter);
         }
 

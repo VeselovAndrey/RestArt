@@ -19,13 +19,15 @@ namespace RestArt.MessageBuilders
         {
             return (request.Verb == HttpVerb.Post || request.Verb == HttpVerb.Put)
                 && request.GetType() == typeof(RestRequest)
-                && request.Parameters.All(p => !(p.Value is FileParameter));
+                && (request.Parameters == null || request.Parameters.All(p => !(p.Value is FileParameter)));
         }
 
         protected override HttpRequestMessage BuildMessage(IRestRequest request)
         {
             // Select request content type and create content
-            HttpContent content = new FormUrlEncodedContent(request.Parameters.Select(pair => new KeyValuePair<string, string>(pair.Key, pair.Value.ToString())));
+            HttpContent content = request.Parameters != null ?
+                new FormUrlEncodedContent(request.Parameters.Select(pair => new KeyValuePair<string, string>(pair.Key, pair.Value.ToString()))) :
+                null;
 
             // Build message
             var message = new HttpRequestMessage(request.Verb.ToHttpMethod(), request.Command) {
