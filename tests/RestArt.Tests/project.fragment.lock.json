@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "exports": {
+    "RestArt.Core/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.5",
+      "compile": {
+        "bin/Debug/RestArt.Core.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/RestArt.Core.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/RestArt.Core.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "RestArt/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.5",
+      "compile": {
+        "bin/Debug/RestArt.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/RestArt.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/RestArt.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    }
+  }
+}
