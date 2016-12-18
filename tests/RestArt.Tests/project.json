@@ -1,5 +1,9 @@
 {
-	"version": "1.0.0-*",
+	"title": "RestArt",
+	"version": "0.8-*",
+	"copyright": "Copyright © 2016 Andrey Veselov",
+	"description": "RestArt unit tests",
+
 	"testRunner": "xunit",
 
 	"frameworks": {

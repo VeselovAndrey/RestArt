@@ -204,5 +204,11 @@ namespace RestArt.Tests
             Assert.Equal(expectedResponseCode, response.Value.Code);
             Assert.Equal(expectedResponseMessage, response.Value.Msg);
         }
+
+        [Fact]
+        public void AppveyorTest()
+        {
+            Assert.Equal(1, 2);
+        }
     }
 }
