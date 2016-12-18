@@ -1,5 +1,5 @@
 ﻿{
-	"version": "0.8.0-beta1",
+	"version": "1.0.0.0",
 	"buildOptions": {
 		"debugType": "portable"
 	},
@@ -9,13 +9,6 @@
 	"supports": {},
 
 	"frameworks": {
-		"net45": {
-			"buildOptions": {
-				"define": [ "net45" ]
-			},
-			"dependencies": {
-			}
-		},
 
 		"netstandard1.6": {
 			"buildOptions": {
@@ -24,6 +17,17 @@
 			"dependencies": {
 				"Microsoft.NETCore.Portable.Compatibility": "1.0.1",
 				"NETStandard.Library": "1.6.0"
+			}
+		},
+
+		"net45": {
+			"buildOptions": {
+				"define": [ "net45" ]
+			},
+			"frameworkAssemblies": {
+				"System": ""
+			},
+			"dependencies": {
 			}
 		}
 	}

@@ -1,5 +1,8 @@
 # RestArt
-RestArt is the .NET library that allows easily send REST API commands and get responses.
+RestArt is the .NET library that allows you to easily send REST API commands and get responses.
+
+## Supported platforms
+
 
 ## Build status ##
 [![AppVeyor](https://ci.appveyor.com/api/projects/status/gfhvnmsrd6t8cbk8/branch/master?svg=true&passingText=branch:%20master%20-%20OK&failingText=branch:%20master%20-%20Failed&pendingText=branch:%20master%20-%20In%20progress)](https://ci.appveyor.com/project/VeselovAndrey/restart/branch/master)
@@ -10,14 +13,17 @@ RestArt is the .NET library that allows easily send REST API commands and get re
 
 ## Latest Packages ##
 [![NuGet - RestArt](https://img.shields.io/nuget/vpre/RestArt.svg?label=NuGet:%20RestArt&style=flat-square)](https://www.nuget.org/packages/RestArt/)
+[![NuGet - RestArt](https://img.shields.io/nuget/vpre/RestArt.Core.svg?label=NuGet:%20RestArt.Core&style=flat-square)](https://www.nuget.org/packages/RestArt.Core/)
+
 [![MyGet - RestArt](https://img.shields.io/myget/restart/vpre/RestArt.svg?label=MyGet:%20RestArt&style=flat-square)](https://www.myget.org/feed/restart/package/nuget/RestArt)
+[![MyGet - RestArt](https://img.shields.io/myget/restart/vpre/RestArt.Core.svg?label=MyGet:%20RestArt.Core&style=flat-square)](https://www.myget.org/feed/restart/package/nuget/RestArt.Core)
 
 ## Simple example ##
 This is very basic example of RestArt usage.
 
 ```C#
-// Define data transfer class (that will contain REST API response data).
-// This class should contains same properties as response JSON.
+// Define data transfer class (it will contain REST API response data).
+// This class should have same properties as response JSON.
 public class MyRestApiCommandResponse 
 {
     public int Id { get; set; }

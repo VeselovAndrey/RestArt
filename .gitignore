@@ -197,3 +197,6 @@ FakesAssemblies/
 /tests/RestArt.Tests/project.lock.json
 /src/RestArt/project.lock.json
 /src/RestArt.Core/project.lock.json
+/src/RestArt/RestArt.nuget.targets
+/src/RestArt.Core/RestArt.Core.nuget.targets
+/tests/RestArt.Tests/project.fragment.lock.json
