@@ -10,13 +10,13 @@ namespace RestArt.Tests
 {
     using System.Net;
     using System.Threading.Tasks;
-    using RestArt.Requests;
+    using RestArt.Core.Requests;
     using RestArt.Tests.Models;
     using Xunit;
 
     public class PostJsonRequestTests
     {
-        private readonly string _restUrl = "http://demo8536676.mockable.io/";
+        private readonly string _restUrl = "http://demo6342033.mockable.io/";
 
         [Fact]
         public async Task ExecuteJsonPostAsync()
@@ -37,7 +37,7 @@ namespace RestArt.Tests
             client.AddOrUpdatePersistentHeader("PersistentHeader", "ph-value");
 
             // Act
-            RestResponse<TestResponse> response = await client.ExecuteAsync<TestResponse>(request);
+            IRestResponse<TestResponse> response = await client.ExecuteAsync<TestResponse>(request);
 
             // Assert
             Assert.NotNull(response);

@@ -1,17 +1,15 @@
-// -----------------------------------------------------------------------
-// <copyright file="TestResponse.cs">
+﻿// -----------------------------------------------------------------------
+// <copyright file="InvalidRestResponse.cs">
 // Copyright (c) 2015-2016 Andrey Veselov. All rights reserved.
 // License: Apache License 2.0
 // Contacts: http://andrey.moveax.com andrey@moveax.com
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace RestArt.Tests.Models
+namespace RestArt
 {
-    public class TestResponse
+    /// <summary>Invalid REST response marker class.</summary>
+    public class InvalidRestResponse
     {
-        public string Msg { get; set; }
-
-        public int Code { get; set; }
     }
 }
