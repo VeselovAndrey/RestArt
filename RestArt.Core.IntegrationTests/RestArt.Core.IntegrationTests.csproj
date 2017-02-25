@@ -1,7 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>    
-    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <TargetFramework>netcoreapp1.0</TargetFramework>    
+    <Product>RestArt</Product>    
+    <Company />    
+    <Authors>Andrey Veselov</Authors>    
+    <Version>1.1.0</Version>    
+    <PackageLicenseUrl>https://github.com/VeselovAndrey/RestArt/blob/master/LICENSE</PackageLicenseUrl>    
+    <Copyright>Copyright © 2016-2017 Andrey Veselov</Copyright>    
+    <PackageProjectUrl>https://github.com/VeselovAndrey/RestArt</PackageProjectUrl>    
+    <RepositoryUrl>https://github.com/VeselovAndrey/RestArt</RepositoryUrl>    
+    <Description>Integration tests for the RestArt.Core implementations.</Description>
   </PropertyGroup>
 
   <ItemGroup>
