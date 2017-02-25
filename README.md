@@ -10,11 +10,9 @@ RestArt is the .NET library that allows you to easily send REST API commands and
 
 ## Stable Packages ##
 [![NuGet - RestArt](https://img.shields.io/nuget/v/RestArt.svg?label=NuGet:%20RestArt&style=flat-square)](https://www.nuget.org/packages/RestArt/)
+[![NuGet - RestArt](https://img.shields.io/nuget/v/RestArt.Core.svg?label=NuGet:%20RestArt.Core&style=flat-square)](https://www.nuget.org/packages/RestArt.Core/)
 
 ## Latest Packages ##
-[![NuGet - RestArt](https://img.shields.io/nuget/vpre/RestArt.svg?label=NuGet:%20RestArt&style=flat-square)](https://www.nuget.org/packages/RestArt/)
-[![NuGet - RestArt](https://img.shields.io/nuget/vpre/RestArt.Core.svg?label=NuGet:%20RestArt.Core&style=flat-square)](https://www.nuget.org/packages/RestArt.Core/)
-
 [![MyGet - RestArt](https://img.shields.io/myget/restart/vpre/RestArt.svg?label=MyGet:%20RestArt&style=flat-square)](https://www.myget.org/feed/restart/package/nuget/RestArt)
 [![MyGet - RestArt](https://img.shields.io/myget/restart/vpre/RestArt.Core.svg?label=MyGet:%20RestArt.Core&style=flat-square)](https://www.myget.org/feed/restart/package/nuget/RestArt.Core)
 
