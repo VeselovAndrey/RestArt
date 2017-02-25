@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <Authors>Andrey Veselov</Authors>
+    <Company />
+    <Product>RestArt</Product>
+    <Copyright>Copyright © 2016-2017 Andrey Veselov</Copyright>
+    <Version>1.1.0</Version>
+    <Description>RestArt is the .NET library that allows you to easily send REST API commands and get responses.</Description>
+    <PackageLicenseUrl>https://github.com/VeselovAndrey/RestArt/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/VeselovAndrey/RestArt/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/VeselovAndrey/RestArt/</RepositoryUrl>
+    <PackageTags>REST</PackageTags>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RestArt\RestArt.csproj" />
+  </ItemGroup>
+
+</Project>
