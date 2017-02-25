@@ -7,7 +7,7 @@
     <Product>RestArt</Product>
     <Copyright>Copyright © 2016-2017 Andrey Veselov</Copyright>
     <Version>1.1.0</Version>
-    <Description>RestArt is the .NET library that allows you to easily send REST API commands and get responses.</Description>
+    <Description>RestArt is the .NET library that allows you to easily send REST API commands and get responses. This is implementations package.</Description>
     <PackageLicenseUrl>https://github.com/VeselovAndrey/RestArt/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/VeselovAndrey/RestArt/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/VeselovAndrey/RestArt/</RepositoryUrl>
